@@ -36,14 +36,14 @@ var {
 } = cfonts
 var rl = createInterface(process.stdin, process.stdout)
 import yargs from 'yargs';
-say(`MILKITA BOT`, {
+say(`MILKCHASE BOT`, {
 	font: 'shade',
 	align: 'center',
 	gradient: ['#12c2e9', '#c471ed'],
 	transitionGradient: true,
 	letterSpacing: 3,
 });
-say(`'MILKITA' Coded By Findme-19`, {
+say(`'MILKCHASE' Coded By Findme-19`, {
 	font: 'console',
 	align: 'center',
 	gradient: ['#DCE35B', '#45B649'],
