@@ -1274,6 +1274,10 @@ contoh: #ssweb google.com f`);
 			}
 		}
 		break;
+
+		
+			// handle ai kategory
+		
 		case 'ba':
 		case 'bard':
 		case 'gemini': {
