@@ -428,7 +428,20 @@ import {
 
 
       // handle downloader kategory
-
+    case 'igstalk': {
+        if (!text) throw 'Perihal Apah?';
+        let stalk_ig = (await await axios.post(API('xzn', 'api/igstalk', {}), {
+          user: text
+        }, {
+          headers: {
+            Authorization: xznkey
+          }
+        })).data
+        let caption = `*${stalk_ig.fullname}*\n> Followers: ${formatK(stalk_ig.followers)}\n> Following: ${formatK(stalk_ig.following)}\n\n${stalk_ig.bio}\n\n_https://instagram.com/${stalk_ig.username.replace('@', '')}_`
+        if (!stalk_ig.photo_profile) return m.reply(stalk_ig)
+        conn.sendFile(m.chat, stalk_ig.photo_profile, '', caption, m)
+      }
+      break;
     case 'download': {
         let rx = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/|shorts\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
         if (!args[0]) return m.reply('linknya mana gan?');
